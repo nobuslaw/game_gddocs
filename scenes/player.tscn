@@ -16,7 +16,7 @@ animations = [{
 "texture": ExtResource("2_ljy64")
 }],
 "loop": true,
-"name": &"up",
+"name": &"Up",
 "speed": 5.0
 }, {
 "frames": [{
@@ -27,7 +27,7 @@ animations = [{
 "texture": ExtResource("4_f287k")
 }],
 "loop": true,
-"name": &"walk",
+"name": &"Walk",
 "speed": 5.0
 }]
 
@@ -38,13 +38,13 @@ height = 68.0
 [node name="Player" type="Area2D"]
 position = Vector2(0, 1)
 script = ExtResource("1_iip7l")
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_pycyu")
-animation = &"walk"
-frame_progress = 0.773612
+animation = &"Walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_qopmq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
